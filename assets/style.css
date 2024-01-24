@@ -66,11 +66,15 @@ footer {
 
     ol {
         display: flex;
-        display: row;  
+        display: row;
     }
 
     li:not(:last-child),  li:last-child{
         margin-bottom: 0;
+    }
+
+    li:not(:last-child){
+        margin-right: var(--gutters);
     }
 
 
