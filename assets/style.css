@@ -1,16 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap');
+
 :root {
+    --font-main:'Poppins', sans-serif;
     --font-size: 16px;
-    --accent-color: black;
-    --hl-color:blue;
+    --font-symbol: "Noto Sans Symbols 2", sans-serif;
+
+    --accent-color: rgb(18, 18, 18);
+    --bg-color:rgb(255, 255, 255);
+    
+    --hl-color1:rgb(118, 207, 255);;
+    --hl-color2:rgb(0, 0, 0);
+
     --gutters: calc(var(--font-size) * 2);
 }
 
-/*
-* {border:1px solid red}
-*/
+
+/* * {border:1px solid red;}  */
+
+
 body {
-    font-family: sans-serif;
+    font-family: var(--font-main);
     font-size: var(--font-size);
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: column;
     row-gap: var(--gutters);
@@ -25,27 +37,53 @@ h1 {
     font-size: calc(var(--font-size) * 2);
     color: var(--accent-color);
 }
+
+h2 {
+    font-size: var(--font-size);
+    font-weight: 500;
+    padding-bottom: calc(var(--gutters)/2);
+}
 .projects {
     padding-left: var(--gutters);
     padding-right: var(--gutters);
 }
 
-li {
-    width: 100%;
-    padding-left: calc(var(--gutters)/2);
-    padding-right: calc(var(--gutters)/2);
-    padding-bottom: calc(var(--gutters)/2);
-    padding-top: calc(var(--gutters)/2);
-    border:1px solid var(--accent-color);
+.project_info {
+    font-size: calc(var(--font-size) / 1.2);
+    margin-bottom:calc(var(--gutters)/2);
+    display:flex;
+    gap: calc(var(--gutters) * 3);
 }
 
+li {
+    width: 100%;
+    /* padding-left: calc(var(--gutters)/2); */
+    /* padding-right: calc(var(--gutters)/2); */
+    padding-bottom: calc(var(--gutters)/2);
+    padding-top: calc(var(--gutters)/2);
+    border-top:1px solid var(--accent-color);
+    display:flex;
+    justify-content: space-between;
+
+}
+
+/* li:last-child {
+    border-bottom:1px solid var(--accent-color);
+} */
+
+/*
 li:not(:last-child){
     margin-bottom: calc(var(--gutters)/2);
 }
+*/
 
 li:hover {
-    color: var(--hl-color);
-    background-color: aquamarine;
+    background-color: var(--hl-color1);
+    color: var(--hl-color2);
+}
+.outwards::after {
+	font-family: var(--font-symbol);
+	content: '🡭'; 
 }
 
 footer {
@@ -56,6 +94,10 @@ footer {
     padding-bottom: var(--gutters);
     padding-right: var(--gutters);
     color: white;
+    bottom:0;
+    width:100%;
+
+    
 }
 
 @media(min-width: 600px) {
@@ -63,12 +105,12 @@ footer {
     :root {
     --font-size: 26px;
     }
-
+/*
     ol {
         display: flex;
         display: row;
     }
-
+*/
     li:not(:last-child),  li:last-child{
         margin-bottom: 0;
     }
