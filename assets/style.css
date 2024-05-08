@@ -13,6 +13,7 @@
     --hl-color2:rgb(0, 0, 0);
 
     --gutters: calc(var(--font-size) * 2);
+    --radius: 2px;
 }
 
 
@@ -43,6 +44,7 @@ h2 {
     font-weight: 500;
     padding-bottom: calc(var(--gutters)/2);
 }
+
 .projects {
     padding-left: var(--gutters);
     padding-right: var(--gutters);
@@ -50,40 +52,54 @@ h2 {
 
 .project_info {
     font-size: calc(var(--font-size) / 1.2);
+    margin-top:calc(var(--gutters)/2);
     margin-bottom:calc(var(--gutters)/2);
     display:flex;
     gap: calc(var(--gutters) * 3);
 }
 
+.small_text {
+    font-family: monospace;
+    margin-bottom: var(--gutters);
+}
+
+.date {
+    width: 560px;
+}
+
 li {
     width: 100%;
-    /* padding-left: calc(var(--gutters)/2); */
-    /* padding-right: calc(var(--gutters)/2); */
     padding-bottom: calc(var(--gutters)/2);
     padding-top: calc(var(--gutters)/2);
     border-top:1px solid var(--accent-color);
-    display:flex;
+    display: flex;
     justify-content: space-between;
-
 }
-
-/* li:last-child {
-    border-bottom:1px solid var(--accent-color);
-} */
-
-/*
-li:not(:last-child){
-    margin-bottom: calc(var(--gutters)/2);
-}
-*/
 
 li:hover {
     background-color: var(--hl-color1);
     color: var(--hl-color2);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.outwards {
+    background-color: var(--accent-color);
+    padding-left: calc(var(--gutters)/4);
+    padding-right: calc(var(--gutters)/4);
+    padding-top:calc(var(--gutters)/8);
+    align-items: center;
+    border-radius: var(--radius);
+    transition: all 0.5s;
 }
 .outwards::after {
 	font-family: var(--font-symbol);
 	content: '🡭'; 
+    color: white;
+}
+
+.outwards:hover {
+    transform: scale(1.05);
 }
 
 footer {
@@ -96,7 +112,6 @@ footer {
     color: white;
     bottom:0;
     width:100%;
-
     
 }
 
@@ -105,21 +120,10 @@ footer {
     :root {
     --font-size: 26px;
     }
-/*
-    ol {
-        display: flex;
-        display: row;
-    }
-*/
     li:not(:last-child),  li:last-child{
         margin-bottom: 0;
     }
-
     li:not(:last-child){
         margin-right: var(--gutters);
     }
-
-
-
-
 }
