@@ -8,9 +8,7 @@
 
     --accent-color: rgb(18, 18, 18);
     --bg-color:rgb(255, 255, 255);
-    
     --hl-color1:rgb(167, 224, 255);;
-    --hl-color2:rgb(0, 0, 0);
 
     --gutters: calc(var(--font-size) * 2);
     --radius: 2px;
@@ -39,10 +37,12 @@ h1 {
     color: var(--accent-color);
 }
 
-h2 {
-    font-size: var(--font-size);
-    font-weight: 500;
-    padding-bottom: calc(var(--gutters)/2);
+p {
+    max-width: 65ch;
+}
+
+img {
+    border-radius: var(--radius);
 }
 
 .projects {
@@ -78,7 +78,6 @@ li {
 
 li:hover {
     background-color: var(--hl-color1);
-    color: var(--hl-color2);
     cursor: pointer;
     text-decoration: underline;
 }
@@ -103,13 +102,11 @@ li:hover {
 }
 
 footer {
-    font-size: calc(var(--font-size) / 1.5);
-    background-color: var(--accent-color);
+    font-size: var(--font-size);
     padding-left: var(--gutters);
     padding-top: var(--gutters);
     padding-bottom: var(--gutters);
     padding-right: var(--gutters);
-    color: white;
     bottom:0;
     width:100%;
     
@@ -118,12 +115,19 @@ footer {
 @media(min-width: 600px) {
 
     :root {
-    --font-size: 26px;
+    --font-size: 20px;
     }
     li:not(:last-child),  li:last-child{
         margin-bottom: 0;
     }
     li:not(:last-child){
         margin-right: var(--gutters);
+    }
+}
+
+@media(min-width: 1000px) {
+
+    :root {
+        --font-size: 26px;
     }
 }
